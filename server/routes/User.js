@@ -1,5 +1,5 @@
 const express = require('express');
-const { register, login, logout, loadUser, verifyOTP, subscribeUser, qna } = require('../Controllers/User');
+const { register, login, logout, loadUser, verifyOTP } = require('../controllers/User');
 const { isAuthenticated } = require('../middlewares/auth');
 const multer = require('multer');
 const router = express.Router();
