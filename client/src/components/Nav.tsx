@@ -14,6 +14,7 @@ import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import Register from "./Auth/Register";
+import Login from "./Auth/Login";
 
 interface CustomNavLinkProps {
   to: string;
@@ -74,13 +75,6 @@ export default function Nav({ toggleLogin, isLoggedIn , routes , user }: any) {
               >
                 
                 Login/Register
-              {/* </button>
-              <button
-                type="button"
-                className="text-white bg-green-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg md:text-sm text-sm md:px-4 md:py-2  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 px-2 "
-                onClick={onOpenLogin}
-              > */}
-                {/* Login/Register */}
                 <Login
                   isOpen={isOpenLogin}
                   onClose={onCloseLogin}
@@ -107,7 +101,7 @@ export default function Nav({ toggleLogin, isLoggedIn , routes , user }: any) {
                   >
                     <MenuItem bg={"gray.900"}>{user?.name}</MenuItem>
                   </CustomNavLink>
-                  <MenuItem onClick={logout} bg={"gray.900"}>
+                  <MenuItem bg={"gray.900"}>
                     <span className="text-red-500">Logout</span>
                   </MenuItem>
                 </MenuList>
