@@ -5,7 +5,7 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 require("dotenv").config({ path: "config/config.env" })
-
+const user = require('./routes/User')
 
 //middlewares
 app.use(express.json())
@@ -32,5 +32,8 @@ io.on('connection', (socket) => {
         io.sockets.emit('message-received', { message: data.message });
     });
 });
+
+//router
+app.use('/api/v1',user)
 
 module.exports = server;
