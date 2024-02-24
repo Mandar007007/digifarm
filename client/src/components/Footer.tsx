@@ -8,7 +8,7 @@ function Footer() {
                     <div className=" grid md:grid-cols-5 grid-cols-1 ">
                         <div className=" col-span-2 flex flex-col md:px-12 px-8 md:py-12 pt-12 md:justify-start justify-center ">
 
-                            <h1 className=" text-[36px] text-green-400 font-bold mb-3 md:text-left text-center " >DigiFarm</h1>
+                            <h1 className=" text-[36px] text-green-400 font-bold mb-3 md:text-left text-center " >Digi<span className='text-slate-300'>Farm</span></h1>
                             <p className=' md:mb-16 mb-0 text-[16px] text-gray-400 md:text-left text-center ' >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, porro omnis, dolores illo iusto adipisci fugiat voluptate voluptat</p>       
 
                             <div className=" md:flex hidden items-center md:justify-start ">

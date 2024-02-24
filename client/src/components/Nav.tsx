@@ -82,7 +82,10 @@ export default function Nav({ toggleLogin, isLoggedIn , routes , user }: any) {
             to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
+            <div className="flex items-center">
             <img src="/logo.png" className="md:h-12 h-6" alt="vite" />
+            <p className="ml-4 text-xl text-green-300 font-semibold ">Digi<span className="text-slate-300">Farm</span></p>
+            </div>
           </CustomNavLink>
           <div className="flex md:order-2 space-x-3 md:space-x-0  rtl:space-x-reverse">
             {!isLoggedIn && (
@@ -151,7 +154,7 @@ export default function Nav({ toggleLogin, isLoggedIn , routes , user }: any) {
                       <CustomNavLink
                         to={route.path}
                         className=""
-                        activeClassName="text-blue-500"
+                        activeClassName="text-green-500"
                       >
                         {route.name}
                       </CustomNavLink>
@@ -172,8 +175,8 @@ export default function Nav({ toggleLogin, isLoggedIn , routes , user }: any) {
                 <li key={index}>
                   <CustomNavLink
                     to={route.path}
-                    className="text-white hover:text-blue-400 font-semibold "
-                    activeClassName="text-blue-400 font-semibold "
+                    className="text-white hover:text-green-300 font-semibold hover:transition-colors ease-in-out delay-50 "
+                    activeClassName="text-green-400 font-semibold "
                   >
                     {route.name}
                   </CustomNavLink>
