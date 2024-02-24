@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import { Toaster } from 'react-hot-toast';
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
 
       </Router>
