@@ -5,8 +5,37 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import { Toaster } from 'react-hot-toast';
 import AboutUs from "./components/AboutUs/AboutUs";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 function App() {
+
+  const dispatch = useDispatch()
+  const user = useSelector((state : any) => state.user.user) || {};
+  const loadUser = async () => {
+    try {
+      const { data } = await axios.get("http://localhost:3000/api/v1/me", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
+
+      if (data.user) {
+        dispatch({ type: "SET_USER", payload: data.user });
+        toggleLogin();
+        
+      } else {
+        dispatch({ type: "CLEAR_USER" });
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    loadUser();
+  }, [])
 
   const routes = [
     {
@@ -41,10 +70,9 @@ function App() {
     <div className="flex min-h-screen flex-col items-center">
       <Router>
 
-      {/* <div className="bgContainer1"></div> */}
       <Toaster />
       <div className="mb-24 ">
-      <Nav toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} routes={routes} user={"sandip"} />
+      <Nav toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} routes={routes} user={user} />
       </div>
 
       <Routes>
