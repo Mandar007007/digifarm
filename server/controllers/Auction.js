@@ -49,3 +49,51 @@ exports.createAuction = async (req, res) => {
     });
   }
 };
+
+exports.checkAuction = async (req,res) => {
+
+  console.log("Inside check auction");
+}
+
+exports.getAllAuction = async (req,res) => {
+  try{
+      const auctions = await Auction.find({})
+
+      res.status(200).json({
+          success: true,
+          auctions
+      })
+
+  }catch(err)
+  {
+      res.status(500).json({
+          success: false,
+          error:err.message
+      })
+  }
+
+}
+
+exports.checkMail = async (req,res) =>{
+
+  const { email ,subject ,  winnerName , cropName , finalBidAmount , auctionDate , ownerAccountDetails } = req.body;
+  console.log("inside mail funciton");
+  console.log( email , subject ,  winnerName , cropName , finalBidAmount , auctionDate , ownerAccountDetails);
+  try{
+
+      const auctionConfirmationEmailOptions = {
+          email : email ,
+          subject : subject ,
+          winnerName : winnerName ,
+          cropName : cropName ,
+          finalBidAmount : finalBidAmount ,
+          auctionDate : auctionDate ,
+          ownerAccountDetails : ownerAccountDetails
+      }
+        
+        await sendAuctionConfirmationEmail(auctionConfirmationEmailOptions);
+  }
+  catch(err){
+      console.log(err)
+  }
+}
