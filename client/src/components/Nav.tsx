@@ -89,13 +89,12 @@ export default function Nav({ toggleLogin, isLoggedIn, routes, user }: any) {
           </CustomNavLink>
           <div className="flex md:order-2 space-x-3 md:space-x-0  rtl:space-x-reverse">
             {!isLoggedIn && (
-              <button
-                type="button"
-                className="text-white bg-gradient-to-br from-green-800 to-green-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium text-sm px-5 py-2.5 text-center"
-                onClick={onOpenLogin}
-              >
 
-                Login/Register
+              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-sm group bg-gradient-to-br from-green-800 to-green-400 group-hover:from-green-800 group-hover:to-green-500 hover:text-white dark:text-white focus:ring-0 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800" onClick={onOpenLogin}>
+                <span className=" text-white relative px-5 py-2.5 transition-all ease-in-out duration-300 bg-[#1a1a1b] dark:bg-gray-900 rounded-sm group-hover:bg-opacity-0">
+                  Login/Register
+                </span>
+
                 <Login
                   isOpen={isOpenLogin}
                   onClose={onCloseLogin}
