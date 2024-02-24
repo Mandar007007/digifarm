@@ -6,6 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Store from "./store";
 import { Provider } from 'react-redux'
 import { extendTheme } from "@chakra-ui/react";
+import Footer from "./components/Footer";
 
 const theme = extendTheme({
   styles: {
@@ -20,9 +21,9 @@ const theme = extendTheme({
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-    <Provider store={Store}>
+      <Provider store={Store}>
         <App />
-
+        <Footer />
         </Provider>
     </ChakraProvider>
   </React.StrictMode>

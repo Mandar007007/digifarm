@@ -38,7 +38,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="flex flex-col justify-center items-center mt-20 space-y-8">
+      <div className="flex flex-col justify-center items-center mt-20 space-y-8 mb-16">
         {cards.map((card, index) => {
           return (
             <RevealCards key={index}>
