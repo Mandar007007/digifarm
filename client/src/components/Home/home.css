@@ -1,0 +1,34 @@
+.glassy-effect-hero{
+  background: rgba(32, 32, 33, 0.43);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(39, 39, 42, 0.5);
+  backdrop-filter: blur(5.1px);
+  -webkit-backdrop-filter: blur(10.1px);
+}
+
+.background {
+position: relative;
+margin: auto; 
+}
+
+.background::before {
+content: "";
+position: absolute;
+top :80px; 
+left: -200px;
+width:600px;
+height: 300px;
+border-radius: 100%;
+background-color: rgb(60, 120, 47); /* Darker green */
+background: linear-gradient(343deg, rgba(60, 120, 47, 1) 0%, rgba(5, 50, 129, 1) 82%, rgba(52, 39, 100, 1) 100%);
+filter: blur(150px);
+z-index: -1000;
+}
+
+.glassy-effect-hero{
+background: rgba(43, 43, 45, 0.43);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+border: 2px solid rgba(39, 39, 42, 0.5);
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(9.1px);
+}
