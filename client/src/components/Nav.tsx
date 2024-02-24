@@ -13,6 +13,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import Register from "./Auth/Register";
 
 interface CustomNavLinkProps {
   to: string;
