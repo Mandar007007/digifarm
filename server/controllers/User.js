@@ -246,3 +246,33 @@ exports.logout = async (req, res) => {
     });
   }
 };
+
+exports.loadUser = async (req,res) => {
+    try{
+        const {token} = req.cookies
+
+        if(!token)
+        {
+            return res.status(404).json({
+                success:false,
+                message:'Login First'
+            })
+        }
+
+        const decoded_id = await jwt.verify(token,process.env.JWT_SECRET)
+
+        const user = await User.findOne({_id: decoded_id._id})
+
+        res.status(200).json({
+            success:true,
+            user
+        })
+
+    }catch(err)
+    {
+        res.status(500).json({
+            success:false,
+            error:err.message
+        })
+    }
+}
