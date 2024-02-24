@@ -41,8 +41,6 @@ const CustomNavLink: React.FC<CustomNavLinkProps> = ({
 
 export default function Nav({ toggleLogin, isLoggedIn , routes , user }: any) {
 
-
-  // const toast = useToast();
   const dispatch = useDispatch();
 
   const {
@@ -55,6 +53,26 @@ export default function Nav({ toggleLogin, isLoggedIn , routes , user }: any) {
     onOpen: onOpenReg,
     onClose: onCloseReg,
   } = useDisclosure();
+
+  const logout = async () => {
+
+    try{
+      await axios.get("http://localhost:3000/api/v1//logout", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
+      dispatch({
+        type: "CLEAR_USER",
+      });
+
+      toast.success("Logged out successfully");
+      toggleLogin();
+    }catch(err){
+      toast.error("Error");
+    }
+  };
 
   return (
     <div>
@@ -101,7 +119,7 @@ export default function Nav({ toggleLogin, isLoggedIn , routes , user }: any) {
                   >
                     <MenuItem bg={"gray.900"}>{user?.name}</MenuItem>
                   </CustomNavLink>
-                  <MenuItem bg={"gray.900"}>
+                  <MenuItem onClick={logout} bg={"gray.900"}>
                     <span className="text-red-500">Logout</span>
                   </MenuItem>
                 </MenuList>
