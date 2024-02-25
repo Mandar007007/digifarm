@@ -10,6 +10,7 @@ import axios from "axios";
 import Auction from "./components/Auction/AuctionPage";
 import AuctionRoom from "./components/Auction/AuctionRoom";
 import PaymentPage from "./PaymentPage/PaymentPage";
+import ProfilePage from "./components/Profile/ProfilePage";
 
 function App() {
 
