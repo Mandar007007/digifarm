@@ -17,7 +17,7 @@ const PaymentPage = () => {
 
     const handleCkeckOut = async (price,auctionId) => {
         try {
-            const key =  "rzp_test_mmgwnpxo4XgLkR"
+            const key =  import.meta.env.VITE_KEY
     
           const {
             data: { order },

@@ -12,8 +12,8 @@ cloudinary.config({
 });
 
 const instance = new Razorpay({
-  key_id: "rzp_test_mmgwnpxo4XgLkR",
-  key_secret: "mLM2ZAdf7hGW1fOfXj6JiqvH",
+  key_id: process.env.KEY_ID,
+  key_secret: process.env.KEY_SECRET,
 });
 
 exports.createAuction = async (req, res) => {
