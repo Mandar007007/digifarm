@@ -37,8 +37,8 @@ const AuctionRoom = () => {
     email : bidderEmail,
     subject: "Auction Winner Confirmation",
     winnerName: auction.currentBidder,
-    cropName: "Baajro",
-    finalBidAmount: "500",
+    cropName: auction.cropName,
+    finalBidAmount: auction.bidPrice,
     auctionDate: "2022-02-15",
     ownerAccountDetails: "Owner's Bank Account Details",
   })

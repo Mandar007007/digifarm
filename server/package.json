@@ -25,6 +25,7 @@
     "node-mailer": "^0.1.1",
     "nodemailer": "^6.9.7",
     "nodemon": "^3.0.1",
+    "razorpay": "^2.9.2",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.2",
     "socket.io": "^4.7.2"

@@ -1,5 +1,7 @@
 const Auction = require("../models/Auction");
 const { sendAuctionConfirmationEmail } = require("../middlewares/sendMail");
+const { request } = require("express");
+const Razorpay = require("razorpay");
 
 const cloudinary = require("cloudinary").v2;
 
@@ -7,6 +9,11 @@ cloudinary.config({
   cloud_name: "dlolke5j9",
   api_key: "732695999155916",
   api_secret: "kZ09EXXdUgZ5c7oxwNFLTiAFcww",
+});
+
+const instance = new Razorpay({
+  key_id: "rzp_test_mmgwnpxo4XgLkR",
+  key_secret: "mLM2ZAdf7hGW1fOfXj6JiqvH",
 });
 
 exports.createAuction = async (req, res) => {
@@ -17,17 +24,17 @@ exports.createAuction = async (req, res) => {
     let url = "url";
     let desc = "This is description";
     console.log(req.file.path);
-    // await cloudinary.uploader.upload(req.file.path, (err, result) => {
-    //     if (err) {
-    //         console.log("error is " +err);
-    //     }
-    //     console.log(result)
-    //     url = result?.url;
-    //     public_id = result?.public_id;
+    await cloudinary.uploader.upload(req.file.path, (err, result) => {
+        if (err) {
+            console.log("error is " +err);
+        }
+        console.log(result)
+        url = result?.url;
+        public_id = result?.public_id;
 
-    //     console.log("url : ", url);
-    //     console.log("public_id : ", public_id);
-    // });
+        console.log("url : ", url);
+        console.log("public_id : ", public_id);
+    });
 
     const auction = await Auction.create({
       userId,
@@ -97,3 +104,58 @@ exports.checkMail = async (req,res) =>{
       console.log(err)
   }
 }
+
+exports.getPendingPayments = async(req,res) => {
+  try{
+    const {bidderEmail} = req.body;
+    const auctions = await Auction.find({bidderEmail})
+
+    res.status(200).json({
+      success: true,
+      auctions
+    })
+
+  }catch(err)
+  {
+    res.status(500).json({
+      success: false,
+      error:err.message
+    })
+  }
+}
+
+exports.verifyPayment = async (req, res) => {
+  const { razorpay_payment_id, razorpay_order_id, razorpay_signature } =
+    req.body;
+  console.log("verify payments");
+
+  const checkStatus = razorpay_order_id + "|" + razorpay_payment_id;
+
+  const expectedSignature = crypto
+    .createHmac("sha256", process.env.RAZOR_SECRET)
+    .update(checkStatus.toString())
+    .digest("hex");
+
+  const isValidPayment = expectedSignature === razorpay_signature;
+
+  if (isValidPayment)
+  {
+    res.redirect(
+      `http://localhost:5173/`
+    );
+  } else {
+    res.status(400).json({ status: false });
+  }
+};
+
+exports.checkOut = async (req, res) => {
+  const options = {
+    amount: Number(req.body.amount * 100),
+    currency: "INR",
+  };
+
+  const order = await instance.orders.create(options);
+
+  console.log(order);
+  res.status(200).json({ status: true, order });
+};
