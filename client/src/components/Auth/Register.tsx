@@ -246,7 +246,7 @@ export default function Register({
             />
             </ InputGroup>
           </FormControl>
-          <FormControl className="flex items-center justify-between h-full border-2 border-gray-500 rounded-sm py-4 px-16 ">
+          <FormControl className="flex items-center justify-between h-full border-2 border-gray-500 rounded-sm py-4 md:px-16 px-8 ">
             <label className=" py-2 px-3 bg-[#319795] font-semibold rounded-sm text-[16px] text-white ">
               Choose File
               <Input

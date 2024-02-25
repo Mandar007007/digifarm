@@ -40,8 +40,6 @@ export default function ProfilePage({
       toast.error("Error");
     }
 
-
-
   };
 
   return (

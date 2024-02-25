@@ -10,6 +10,7 @@ import axios from "axios";
 import Auction from "./components/Auction/AuctionPage";
 import AuctionRoom from "./components/Auction/AuctionRoom";
 import ProfilePage from "./components/Profile/ProfilePage";
+import History from "./components/Profile/History";
 
 function App() {
 
@@ -84,6 +85,7 @@ function App() {
         <Route path="/auctionPage" element={<AuctionRoom />} />
         <Route path="/profile" element={<ProfilePage toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} user={user}  dispatch={dispatch}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/history" element={<History />} />
       </Routes>
 
       </Router>

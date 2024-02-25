@@ -36,7 +36,6 @@ function Hero() {
                                             <button type="button" className="text-white bg-gradient-to-br rounded-full from-green-800 to-green-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium text-sm px-5 py-2.5 text-center">
                                                 Let's Bid
                                             </button>
-    
                                         </div>
                                     </div>
                                 </div>
