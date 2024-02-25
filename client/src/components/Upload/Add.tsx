@@ -18,6 +18,7 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Tooltip,
 } from "@chakra-ui/react";
 
 import toast from "react-hot-toast";
@@ -95,7 +96,11 @@ const AddButton = ({ user }: any) => {
 
   return (
     <div>
-      <Box position="fixed" bottom="5" right="5" zIndex={100}>
+      <Tooltip label="Add Auction" placement='auto' aria-label="A tooltip">
+      <Box position="fixed" bottom="5" right="5" zIndex={100}
+      onClick={openAuction}
+      
+      >
         <Menu>
           <MenuButton
             as={IconButton}
@@ -112,21 +117,11 @@ const AddButton = ({ user }: any) => {
             _expanded={{ bg: "blue.400" }}
             _focus={{ boxShadow: "outline" }}
           />
-          <MenuList bg={"bg.gray.800"}>
-            <MenuItem
-              bg={"bg.gray.800"}
-              icon={<CopyIcon />}
-              onClick={openAuction}
-            >
-              Create Auction
-            </MenuItem>
-            {/* <MenuItem bg={"bg.gray.800"} icon={<EditIcon />} onClick={onOpenAuction}>
-              Post Blog
-            </MenuItem> */}
-          </MenuList>
+          
         </Menu>
+        
       </Box>
-
+      </Tooltip>
       {/* Modal for Auction */}
       <Modal onClose={onCloseAuction} isOpen={isOpenAuction} isCentered>
         <ModalOverlay />
@@ -193,7 +188,8 @@ const AddButton = ({ user }: any) => {
 
             </FormControl>
           </ModalBody>
-          <ModalFooter className=" bg-gray-800  bg-opacity-100 shadow-lg text-white">
+          <ModalFooter  className=" bg-gray-800   bg-opacity-100 shadow-lg text-white">
+
             <Button colorScheme="teal" m={3} onClick={createAuction}>
               Create Auction
             </Button>
@@ -205,4 +201,4 @@ const AddButton = ({ user }: any) => {
   );
 };
 
-export default AddButton;
+export default AddButton;
