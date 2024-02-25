@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config({ path: "config/config.env" });
 const user = require("./routes/User");
 const auction = require("./routes/Auction");
+const Auction = require("./models/Auction");
 
 //middlewares
 app.use(express.json());

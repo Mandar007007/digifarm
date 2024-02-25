@@ -106,7 +106,7 @@ const AuctionRoom = () => {
       });
 
       const currentTime = new Date().toLocaleTimeString();
-      const message = ${currentTime} Bid from ${updatedAuction.bidder} of Amount ${updatedAuction.updatedAuction.bidPrice};
+      const message =` ${currentTime} Bid from ${updatedAuction.bidder} of Amount ${updatedAuction.updatedAuction.bidPrice}`;
 
       
       setHistory((prevHistory) => [...prevHistory, message]);
