@@ -7,6 +7,8 @@ import { Toaster } from 'react-hot-toast';
 import AboutUs from "./components/AboutUs/AboutUs";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import Auction from "./components/Auction/AuctionPage";
+import AuctionRoom from "./components/Auction/AuctionRoom";
 
 function App() {
 
@@ -77,7 +79,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/auction" element={<Auction isLoggedIn={isLoggedIn} user={user} />} />
+        <Route path="/auctionPage" element={<AuctionRoom />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        
       </Routes>
 
       </Router>
