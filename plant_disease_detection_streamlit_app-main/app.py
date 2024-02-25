@@ -46,7 +46,7 @@ async def potato():
         predicted_class = class_names[np.argmax(predictions[0])]
         confidence = np.max(predictions[0])
         print("prediction", class_names[np.argmax(predictions)])
-        st.write("Predicted Class : ", predicted_class, " Confidence Level : ", confidence)
+        st.write("Predicted Class : ", predicted_class, " Confidence Level : ", confidence*100)
 
 
 async def tomato():
@@ -66,7 +66,7 @@ async def tomato():
         predicted_class = Tomato_classes[np.argmax(predictions[0])]
         confidence = np.max(predictions[0])
         print("prediction", Tomato_classes[np.argmax(predictions)])
-        st.write("Predicted Class : ", predicted_class, " Confidence Level : ", confidence)
+        st.write("Predicted Class : ", predicted_class, " disease Level : ", confidence*100)
 
 
 async def pepper():
@@ -92,7 +92,7 @@ async def pepper():
         confidence = np.max(predictions[0])
         print("prediction", pepper_classes[np.argmax(predictions)])
         st.write("Predicted Class : ", predicted_class)
-        st.write("Confidence Level : ", confidence)
+        st.write("disease Level : ", confidence)
 
 import asyncio
 
