@@ -33,6 +33,7 @@ function Footer() {
                                     name="email"
                                     type="email"
                                     autoComplete="off"
+                                    autoCorrect='off'
                                     required
                                     className="min-w-0 flex-auto rounded-sm border-0 bg-white/5 px-4 py-3 text-white shadow-sm sm:text-sm sm:leading-6"
                                     placeholder="Enter your email"  

@@ -190,7 +190,7 @@ export default function Nav({ toggleLogin, isLoggedIn, routes, user }: any) {
               </li>
               <li>
                 <Menu>
-                  <MenuButton>ML Models</MenuButton>
+                  <MenuButton className="hover:text-green-300 hover:transition-colors ease-in-out delay-50" >Services</MenuButton>
                   <MenuList bg={"gray.900"}>
                     <MenuItem bg={"gray.900"}>
                       <CustomNavLink
