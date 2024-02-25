@@ -79,4 +79,8 @@ potential buyers, thereby expanding their market reach beyond local boundaries.
 5. Auction Room:
         <img width="960" alt="Screenshot 2024-02-25 182555" src="https://github.com/Mandar007007/digifarm/assets/107240096/eff8238d-e26c-4646-9515-b1d4e70f235e">
 
-
+6. Payment Status:
+        <img width="960" alt="Screenshot 2024-02-25 185322" src="https://github.com/Mandar007007/digifarm/assets/107240096/ff511c97-11c3-4de0-9d2d-2073aeee2cef">
+        
+8. Payment Gateway:
+        <img width="960" alt="Screenshot 2024-02-25 185340" src="https://github.com/Mandar007007/digifarm/assets/107240096/b72dae6c-532a-4a3f-a303-056412455dbb">
