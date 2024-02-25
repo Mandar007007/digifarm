@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import Auction from "./components/Auction/AuctionPage";
 import AuctionRoom from "./components/Auction/AuctionRoom";
+import ProfilePage from "./components/Profile/ProfilePage";
 
 function App() {
 
@@ -81,8 +82,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auction" element={<Auction isLoggedIn={isLoggedIn} user={user} />} />
         <Route path="/auctionPage" element={<AuctionRoom />} />
+        <Route path="/profile" element={<ProfilePage toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} user={user}  dispatch={dispatch}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
-        
       </Routes>
 
       </Router>
