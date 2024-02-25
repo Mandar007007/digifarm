@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import Reveal from "../Reveal";
-import { Button  } from "@chakra-ui/react";
+import { Button, Tooltip } from "@chakra-ui/react";
 import * as io from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -72,7 +72,7 @@ export default function Auction({ isLoggedIn, user }: any) {
     <div>
       <h1 className="text-3xl font-bold mb-10">Live Auctions</h1>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="flex  flex-col lg:flex-row  gap-3 flex-wrap justify-center">
         {auctions.map((auction: any) => {
           // console.log(auction);
 
@@ -122,7 +122,7 @@ export default function Auction({ isLoggedIn, user }: any) {
         })}
       </div>
 
-      <AddButton user={user}/>
+      <AddButton user={user} />
     </div>
   );
 }
