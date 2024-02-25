@@ -62,5 +62,21 @@ potential buyers, thereby expanding their market reach beyond local boundaries.
    streamlit run ./app.py
    ```
 
+# **Screenshots:**
 
-  
+1. Home Page:
+        <img width="960" alt="Screenshot 2024-02-25 182621" src="https://github.com/Mandar007007/digifarm/assets/107240096/561da487-bf3f-4482-80bd-ab989801f386">
+
+2. Login Page:
+        <img width="960" alt="Screenshot 2024-02-25 183149" src="https://github.com/Mandar007007/digifarm/assets/107240096/76dbdafc-9660-470b-9662-c213345e1ae8">
+
+3. Register Page:
+        <img width="960" alt="Screenshot 2024-02-25 183204" src="https://github.com/Mandar007007/digifarm/assets/107240096/d3fbced7-4003-456b-b32e-be5707c27a87">
+
+4. Auction View:
+        <img width="960" alt="Screenshot 2024-02-25 182522" src="https://github.com/Mandar007007/digifarm/assets/107240096/25e9dd7d-5d0b-4dd3-a984-e97089b12a0f">
+
+5. Auction Room:
+        <img width="960" alt="Screenshot 2024-02-25 182555" src="https://github.com/Mandar007007/digifarm/assets/107240096/eff8238d-e26c-4646-9515-b1d4e70f235e">
+
+
